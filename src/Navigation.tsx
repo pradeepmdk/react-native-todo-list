@@ -1,10 +1,11 @@
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import {createStackNavigator, TransitionPresets} from '@react-navigation/stack';
+import {createStackNavigator} from '@react-navigation/stack';
 import {SafeAreaView} from 'react-native';
 import {useAppSelector} from './store';
 import Login from './pages/Auth/Login';
 import Home from './pages/Home';
+import SignUp from './pages/Auth/SignUp';
 const Stack = createStackNavigator();
 
 export default function Navigation() {
@@ -24,6 +25,7 @@ export default function Navigation() {
             initialRouteName={'Login'}
             screenOptions={{headerShown: false}}>
             <Stack.Screen name="Login" component={Login} />
+            <Stack.Screen name="SignUp" component={SignUp} />
           </Stack.Navigator>
         )}
       </NavigationContainer>

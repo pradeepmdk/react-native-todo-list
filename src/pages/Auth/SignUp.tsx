@@ -1,14 +1,14 @@
 import React from 'react';
 import {Controller, useForm} from 'react-hook-form';
 import {StyleSheet, View} from 'react-native';
-import {Button, Text, TextInput} from 'react-native-paper';
 import {useAppDispatch} from '../../store';
-import {setIsloggedIn} from '../../store/slice/authSlice';
+import {Button, Text, TextInput} from 'react-native-paper';
 import {NavigationProp, useNavigation} from '@react-navigation/native';
 
-export default function Login() {
+export default function SignUp() {
   const dispatch = useAppDispatch();
   const navigation = useNavigation<NavigationProp<any>>();
+
   const {
     control,
     handleSubmit,
@@ -20,10 +20,8 @@ export default function Login() {
     },
   });
   const onSubmit = (data: any) => {
-    dispatch(setIsloggedIn(true));
     console.log(data);
   };
-
   return (
     <View style={style.root}>
       <Controller
@@ -64,15 +62,16 @@ export default function Login() {
         buttonColor="#ff7f5aef"
         textColor="white"
         onPress={handleSubmit(onSubmit)}>
-        Login
+        Sign Up
       </Button>
       <View style={{marginTop: 10}} />
+
       <Text
         onPress={() => {
-          navigation.navigate('SignUp');
+          navigation.navigate('Login');
         }}
         style={{textAlign: 'center'}}>
-        Don't have account? Register
+        Already have account? Login
       </Text>
     </View>
   );
