@@ -1,4 +1,5 @@
 import {AppRegistry} from 'react-native';
+import React from 'react';
 import App from './App';
 import { enableLegacyWebImplementation } from 'react-native-gesture-handler';
 enableLegacyWebImplementation(true);
@@ -15,6 +16,8 @@ const iconFontStyles = `@font-face {
   font-family: FontAwesome;
 }`;
 
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+
 // Create stylesheet
 const style = document.createElement('style');
 style.type = 'text/css';
@@ -24,7 +27,14 @@ if (style.styleSheet) {
   style.appendChild(document.createTextNode(iconFontStyles));
 }
 
+const AppWeb = () => {
+  return (
+    <GestureHandlerRootView>
+      <App/>
+    </GestureHandlerRootView>)
+}
+
 // Inject stylesheet
 document.head.appendChild(style); 
-AppRegistry.registerComponent('App', () => App);
+AppRegistry.registerComponent('App', () => AppWeb);
 AppRegistry.runApplication('App', {rootTag: document.getElementById('root')});

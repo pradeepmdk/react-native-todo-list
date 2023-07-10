@@ -16,7 +16,6 @@ import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 import {persistor, store} from './store';
 import Navigation from './Navigation';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -29,7 +28,6 @@ function App(): JSX.Element {
   console.log("sdfsf")
 
   return (
-    <GestureHandlerRootView>
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <Provider store={store}>
@@ -39,7 +37,6 @@ function App(): JSX.Element {
         </PersistGate>
       </Provider>
     </SafeAreaView>
-    </GestureHandlerRootView>
   );
 }
 
