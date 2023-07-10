@@ -12,17 +12,16 @@ import {
   useColorScheme,
 } from 'react-native';
 import 'react-native-gesture-handler'
-import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
-import {persistor, store} from './src/store';
-import Navigation from './src/Navigation';
+import {persistor, store} from './store';
+import Navigation from './Navigation';
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+  const backgroundStyle = { 
+    backgroundColor: '#fff',
     flex: 1,
   };
 
