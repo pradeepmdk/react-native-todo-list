@@ -33,7 +33,6 @@ function App(): JSX.Element {
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <Navigation />
-          {/* <Toast /> */}
         </PersistGate>
       </Provider>
     </SafeAreaView>

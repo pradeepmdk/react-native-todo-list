@@ -9,15 +9,15 @@ import { setIsListType } from '../../store/slice/todoSlice';
 
 export default function Home() {
   const listType = useAppSelector(state => state.todo.listType);
-  const dispatch = useAppDispatch();
+  //const dispatch = useAppDispatch();
   useEffect(() => {
-    dispatch(setIsListType(1));
+    //dispatch(setIsListType(1));
   }, [])
   return (
     <View style={{...style.root, backgroundColor: listType ? '#fff' : 'grey'}}>
       <LogOut></LogOut>
       <Todo/>
-      {/* {listType == 0 && <BottomSheetWithButtons />} */}
+       {listType == 0 && <BottomSheetWithButtons />} 
     </View>
   );
 }
